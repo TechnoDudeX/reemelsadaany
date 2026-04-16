@@ -468,12 +468,49 @@ section { padding: 100px 80px; position: relative; }
   position: relative;
   overflow: hidden;
   transition: all 0.3s cubic-bezier(0.16,1,0.3,1);
-  cursor: default;
+  cursor: pointer;
 }
 
 .exp-card:hover {
   transform: translateY(-4px);
   box-shadow: 0 16px 48px rgba(0,0,0,0.08);
+}
+
+.exp-details {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.4s ease, opacity 0.3s ease;
+  opacity: 0;
+}
+
+.exp-card.expanded .exp-details {
+  max-height: 800px;
+  opacity: 1;
+}
+
+.exp-toggle {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  margin-top: 12px;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 12px;
+  color: var(--text-muted);
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  transition: color 0.2s;
+}
+
+.exp-toggle:hover { color: var(--text-primary); }
+
+.exp-toggle svg {
+  transition: transform 0.3s ease;
+}
+
+.exp-card.expanded .exp-toggle svg {
+  transform: rotate(180deg);
 }
 
 .exp-card--fundthrough {
@@ -1255,23 +1292,29 @@ footer {
         Leading a team of four, owning the full month-end cycle, and standing up
         the processes a high-growth fintech needs.
       </p>
-      <ul class="exp-highlights">
-        <li>Managed and mentored a team of four, running monthly training sessions on core accounting principles</li>
-        <li>Led month-end close: journal entries, bad debt provisions, AP accruals, payroll, and expense adjustments</li>
-        <li>Built Power Query automations to streamline reconciliation processes and reduce manual errors</li>
-        <li>Developed Excel macros for automated data extraction and formatting across reporting workflows</li>
-        <li>Primary liaison for external audit (MNP), coordinating planning, execution, and auditor inquiries</li>
-        <li>Managed daily cash operations and fund disbursement, optimizing liquidity across accounts</li>
-        <li>Presented monthly financial statements to CEO and CFO with variance analysis and commentary</li>
-        <li>Oversaw external financial reporting to lenders, ensuring covenant compliance</li>
-      </ul>
-      <div class="exp-tags">
-        <span class="exp-tag">NetSuite</span>
-        <span class="exp-tag">Power Query</span>
-        <span class="exp-tag">Excel Macros</span>
-        <span class="exp-tag">Month-End Close</span>
-        <span class="exp-tag">Team Leadership</span>
+      <div class="exp-details">
+        <ul class="exp-highlights">
+          <li>Managed and mentored a team of four, running monthly training sessions on core accounting principles</li>
+          <li>Led month-end close: journal entries, bad debt provisions, AP accruals, payroll, and expense adjustments</li>
+          <li>Built Power Query automations to streamline reconciliation processes and reduce manual errors</li>
+          <li>Developed Excel macros for automated data extraction and formatting across reporting workflows</li>
+          <li>Primary liaison for external audit (MNP), coordinating planning, execution, and auditor inquiries</li>
+          <li>Managed daily cash operations and fund disbursement, optimizing liquidity across accounts</li>
+          <li>Presented monthly financial statements to CEO and CFO with variance analysis and commentary</li>
+          <li>Oversaw external financial reporting to lenders, ensuring covenant compliance</li>
+        </ul>
+        <div class="exp-tags">
+          <span class="exp-tag">NetSuite</span>
+          <span class="exp-tag">Power Query</span>
+          <span class="exp-tag">Excel Macros</span>
+          <span class="exp-tag">Month-End Close</span>
+          <span class="exp-tag">Team Leadership</span>
+        </div>
       </div>
+      <button class="exp-toggle" onclick="this.closest('.exp-card').classList.toggle('expanded')">
+        <span class="exp-toggle-text">Show more</span>
+        <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg>
+      </button>
     </div>
 
     <!-- PwC -->
@@ -1288,23 +1331,29 @@ footer {
         Managed a $1M+ client portfolio across retail, education, and telecom sectors.
         Led cross-functional teams across Dubai, Lagos, and London offices.
       </p>
-      <ul class="exp-highlights">
-        <li>Managed diverse client portfolio exceeding $1M in billing, overseeing project management, resourcing, and execution</li>
-        <li>18-month engagement leading the Al-Futtaim Group audit, including Inditex subsidiaries (Zara, Massimo Dutti, Bershka)</li>
-        <li>Acting manager on Dubai International School audit, overseeing team and client delivery</li>
-        <li>Led IHS Towers engagement across Dubai, Nigeria, and London offices</li>
-        <li>Presented financial statements and disclosures to stakeholders with clear performance insights</li>
-        <li>Evaluated internal controls using the COSO framework to shape audit approach</li>
-      </ul>
-      <div class="exp-industries">
-        <div class="exp-industries-label">Industries</div>
-        <div class="exp-industries-list">
-          <span class="industry-chip">Global Retail</span>
-          <span class="industry-chip">Education</span>
-          <span class="industry-chip">Telecom Infrastructure</span>
-          <span class="industry-chip">Conglomerates</span>
+      <div class="exp-details">
+        <ul class="exp-highlights">
+          <li>Managed diverse client portfolio exceeding $1M in billing, overseeing project management, resourcing, and execution</li>
+          <li>18-month engagement leading the Al-Futtaim Group audit, including Inditex subsidiaries (Zara, Massimo Dutti, Bershka)</li>
+          <li>Acting manager on Dubai International School audit, overseeing team and client delivery</li>
+          <li>Led IHS Towers engagement across Dubai, Nigeria, and London offices</li>
+          <li>Presented financial statements and disclosures to stakeholders with clear performance insights</li>
+          <li>Evaluated internal controls using the COSO framework to shape audit approach</li>
+        </ul>
+        <div class="exp-industries">
+          <div class="exp-industries-label">Industries</div>
+          <div class="exp-industries-list">
+            <span class="industry-chip">Global Retail</span>
+            <span class="industry-chip">Education</span>
+            <span class="industry-chip">Telecom Infrastructure</span>
+            <span class="industry-chip">Conglomerates</span>
+          </div>
         </div>
       </div>
+      <button class="exp-toggle" onclick="this.closest('.exp-card').classList.toggle('expanded')">
+        <span class="exp-toggle-text">Show more</span>
+        <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg>
+      </button>
     </div>
 
     <!-- EY -->
@@ -1321,19 +1370,25 @@ footer {
         Worked on complex audit engagements for manufacturers preparing for public markets,
         including IPO readiness.
       </p>
-      <ul class="exp-highlights">
-        <li>Key team member on Husky Technologies audit, preparing financial statements ahead of NYSE listing (now GPGI, valued at ~$7.4B)</li>
-        <li>Dye & Durham (software company) audit engagement, gaining SaaS industry exposure</li>
-        <li>Supported IPO/transaction readiness through detailed financial reporting and disclosure preparation</li>
-      </ul>
-      <div class="exp-industries">
-        <div class="exp-industries-label">Industries</div>
-        <div class="exp-industries-list">
-          <span class="industry-chip">Manufacturing</span>
-          <span class="industry-chip">SaaS / Software</span>
-          <span class="industry-chip">IPO Readiness</span>
+      <div class="exp-details">
+        <ul class="exp-highlights">
+          <li>Key team member on Husky Technologies audit, preparing financial statements ahead of NYSE listing (now GPGI, valued at ~$7.4B)</li>
+          <li>Dye & Durham (software company) audit engagement, gaining SaaS industry exposure</li>
+          <li>Supported IPO/transaction readiness through detailed financial reporting and disclosure preparation</li>
+        </ul>
+        <div class="exp-industries">
+          <div class="exp-industries-label">Industries</div>
+          <div class="exp-industries-list">
+            <span class="industry-chip">Manufacturing</span>
+            <span class="industry-chip">SaaS / Software</span>
+            <span class="industry-chip">IPO Readiness</span>
+          </div>
         </div>
       </div>
+      <button class="exp-toggle" onclick="this.closest('.exp-card').classList.toggle('expanded')">
+        <span class="exp-toggle-text">Show more</span>
+        <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg>
+      </button>
     </div>
 
     <!-- KPMG -->
@@ -1350,24 +1405,30 @@ footer {
         Where it all started. Audited companies across agriculture, manufacturing, food,
         enterprise software, education, and government sectors.
       </p>
-      <ul class="exp-highlights">
-        <li>OpenText (enterprise software) &mdash; large-scale software company audit</li>
-        <li>Wilfrid Laurier University &mdash; audited grants and institutional financials</li>
-        <li>City of Kitchener &mdash; municipal government audit</li>
-        <li>Semex (agriculture), Mammoet (heavy lift), Dare Foods &mdash; diverse industry exposure</li>
-        <li>OTIP (insurance) &mdash; Ontario Teachers' Insurance Plan</li>
-      </ul>
-      <div class="exp-industries">
-        <div class="exp-industries-label">Industries</div>
-        <div class="exp-industries-list">
-          <span class="industry-chip">Enterprise Software</span>
-          <span class="industry-chip">Agriculture</span>
-          <span class="industry-chip">Government</span>
-          <span class="industry-chip">Education</span>
-          <span class="industry-chip">Insurance</span>
-          <span class="industry-chip">Food &amp; Bev</span>
+      <div class="exp-details">
+        <ul class="exp-highlights">
+          <li>OpenText (enterprise software) &mdash; large-scale software company audit</li>
+          <li>Wilfrid Laurier University &mdash; audited grants and institutional financials</li>
+          <li>City of Kitchener &mdash; municipal government audit</li>
+          <li>Semex (agriculture), Mammoet (heavy lift), Dare Foods &mdash; diverse industry exposure</li>
+          <li>OTIP (insurance) &mdash; Ontario Teachers' Insurance Plan</li>
+        </ul>
+        <div class="exp-industries">
+          <div class="exp-industries-label">Industries</div>
+          <div class="exp-industries-list">
+            <span class="industry-chip">Enterprise Software</span>
+            <span class="industry-chip">Agriculture</span>
+            <span class="industry-chip">Government</span>
+            <span class="industry-chip">Education</span>
+            <span class="industry-chip">Insurance</span>
+            <span class="industry-chip">Food &amp; Bev</span>
+          </div>
         </div>
       </div>
+      <button class="exp-toggle" onclick="this.closest('.exp-card').classList.toggle('expanded')">
+        <span class="exp-toggle-text">Show more</span>
+        <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg>
+      </button>
     </div>
 
   </div>
@@ -1637,6 +1698,15 @@ const observer = new IntersectionObserver((entries) => {
 }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
 
 document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+// Toggle expand/collapse text
+document.querySelectorAll('.exp-toggle').forEach(btn => {
+  btn.addEventListener('click', () => {
+    const card = btn.closest('.exp-card');
+    const text = btn.querySelector('.exp-toggle-text');
+    text.textContent = card.classList.contains('expanded') ? 'Show less' : 'Show more';
+  });
+});
 </script>
 
 </body>
