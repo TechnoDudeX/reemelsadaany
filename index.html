@@ -1,0 +1,1611 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Reem El-Sadaany | CPA &middot; Finance Operator</title>
+<meta name="description" content="Reem El-Sadaany. CPA, Accounting Manager, and Finance Operator building scalable systems for high-growth startups.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+:root {
+  --bg-base: #F8FAFC;
+  --bg-surface: #FFFFFF;
+  --bg-card: #FFFFFF;
+  --border: #E2E8F0;
+  --border-hover: #CBD5E1;
+
+  --text-primary: #0F172A;
+  --text-secondary: #475569;
+  --text-muted: #94A3B8;
+
+  --accent: #0D9488;
+  --accent-light: #F0FDFA;
+  --accent-dark: #0F766E;
+
+  --fundthrough: #6366F1;
+  --fundthrough-bg: #EEF2FF;
+  --fundthrough-border: rgba(99,102,241,0.18);
+
+  --pwc: #D97706;
+  --pwc-bg: #FFFBEB;
+  --pwc-border: rgba(217,119,6,0.18);
+
+  --ey: #FACC15;
+  --ey-dark: #A16207;
+  --ey-bg: #FEFCE8;
+  --ey-border: rgba(250,204,21,0.18);
+
+  --kpmg: #2563EB;
+  --kpmg-bg: #EFF6FF;
+  --kpmg-border: rgba(37,99,235,0.18);
+
+  --green: #10B981;
+  --white: #FFFFFF;
+  --gray-100: #F1F5F9;
+  --gray-200: #E2E8F0;
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: 'Outfit', sans-serif;
+  background: var(--bg-base);
+  color: var(--text-primary);
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* NAV */
+nav {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  z-index: 1000;
+  padding: 16px 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: rgba(248,250,252,0.85);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-bottom: 1px solid var(--border);
+  transition: all 0.3s ease;
+}
+
+nav.scrolled {
+  padding: 12px 40px;
+  background: rgba(255,255,255,0.95);
+  box-shadow: 0 1px 0 var(--border), 0 4px 16px rgba(0,0,0,0.06);
+}
+
+.nav-logo {
+  font-family: 'JetBrains Mono', monospace;
+  font-weight: 500;
+  font-size: 14px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--text-primary);
+  text-decoration: none;
+}
+
+.nav-links {
+  display: flex;
+  gap: 32px;
+  list-style: none;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: var(--text-secondary);
+  font-size: 13px;
+  font-weight: 500;
+  letter-spacing: 0.3px;
+  transition: color 0.2s;
+  position: relative;
+}
+
+.nav-links a::after {
+  content: '';
+  position: absolute;
+  bottom: -4px; left: 0;
+  width: 0; height: 2px;
+  background: var(--accent);
+  transition: width 0.3s ease;
+}
+
+.nav-links a:hover { color: var(--text-primary); }
+.nav-links a:hover::after { width: 100%; }
+
+.hamburger {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  cursor: pointer;
+  background: none;
+  border: none;
+  padding: 4px;
+}
+
+.hamburger span {
+  width: 22px;
+  height: 2px;
+  background: var(--text-primary);
+  transition: all 0.3s ease;
+}
+
+/* HERO */
+.hero {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  padding: 120px 80px 80px;
+  justify-content: center;
+  gap: 60px;
+  position: relative;
+  overflow: hidden;
+  background: var(--bg-base);
+}
+
+.hero-bg-shapes {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+  overflow: hidden;
+}
+
+.hero-shape {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(80px);
+  opacity: 0.12;
+  animation: float 8s ease-in-out infinite;
+}
+
+.hero-shape-1 {
+  width: 500px; height: 500px;
+  background: var(--fundthrough);
+  top: -100px; right: -100px;
+}
+
+.hero-shape-2 {
+  width: 400px; height: 400px;
+  background: var(--accent);
+  bottom: -50px; left: 10%;
+  animation-delay: -3s;
+}
+
+.hero-shape-3 {
+  width: 300px; height: 300px;
+  background: var(--pwc);
+  top: 40%; right: 20%;
+  animation-delay: -5s;
+}
+
+@keyframes float {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  33% { transform: translate(20px, -30px) scale(1.05); }
+  66% { transform: translate(-15px, 20px) scale(0.95); }
+}
+
+.hero-content {
+  position: relative;
+  z-index: 1;
+  max-width: 620px;
+  flex: 1;
+}
+
+.hero-tag {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 12px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 24px;
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeUp 0.6s ease forwards 0.2s;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.hero-tag::before {
+  content: '';
+  display: inline-block;
+  width: 24px; height: 1px;
+  background: var(--accent);
+}
+
+.hero-name {
+  font-size: clamp(48px, 7vw, 84px);
+  font-weight: 900;
+  line-height: 1.05;
+  letter-spacing: -2px;
+  margin-bottom: 24px;
+  opacity: 0;
+  transform: translateY(30px);
+  animation: fadeUp 0.6s ease forwards 0.4s;
+  color: var(--text-primary);
+}
+
+.hero-name .highlight {
+  background: linear-gradient(135deg, var(--accent) 0%, var(--fundthrough) 50%, var(--pwc) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.hero-desc {
+  font-size: 19px;
+  line-height: 1.75;
+  color: var(--text-secondary);
+  max-width: 620px;
+  margin-bottom: 40px;
+  opacity: 0;
+  transform: translateY(30px);
+  animation: fadeUp 0.6s ease forwards 0.6s;
+}
+
+.hero-cta-row {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  flex-wrap: wrap;
+  opacity: 0;
+  transform: translateY(30px);
+  animation: fadeUp 0.6s ease forwards 0.8s;
+}
+
+.btn-primary {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 13px 24px;
+  background: var(--text-primary);
+  color: #FFFFFF;
+  text-decoration: none;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 14px;
+  transition: all 0.25s cubic-bezier(0.16,1,0.3,1);
+  border: 1px solid var(--text-primary);
+}
+
+.btn-primary:hover {
+  background: var(--accent);
+  border-color: var(--accent);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(13,148,136,0.25);
+}
+
+.btn-secondary {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 13px 24px;
+  background: transparent;
+  color: var(--text-secondary);
+  text-decoration: none;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 14px;
+  border: 1px solid var(--border);
+  transition: all 0.25s cubic-bezier(0.16,1,0.3,1);
+}
+
+.btn-secondary:hover {
+  border-color: var(--border-hover);
+  color: var(--text-primary);
+  transform: translateY(-2px);
+}
+
+.hero-status {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 48px;
+  opacity: 0;
+  animation: fadeUp 0.6s ease forwards 1s;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 12px;
+  color: var(--text-secondary);
+}
+
+.status-dot {
+  width: 7px; height: 7px;
+  background: var(--green);
+  border-radius: 50%;
+  animation: pulse 2s ease-in-out infinite;
+  flex-shrink: 0;
+}
+
+@keyframes pulse {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(16,185,129,0.4); }
+  50% { box-shadow: 0 0 0 5px rgba(16,185,129,0); }
+}
+
+.hero-status strong { color: var(--text-primary); font-weight: 600; }
+
+@keyframes fadeUp {
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* SECTIONS */
+section { padding: 100px 80px; position: relative; }
+
+.section-label {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 11px;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 12px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.section-label::before {
+  content: '';
+  display: inline-block;
+  width: 18px; height: 2px;
+  background: var(--accent);
+}
+
+.section-title {
+  font-size: clamp(28px, 4vw, 44px);
+  font-weight: 800;
+  letter-spacing: -1.5px;
+  margin-bottom: 60px;
+  line-height: 1.1;
+  color: var(--text-primary);
+}
+
+/* ABOUT */
+.about {
+  background: var(--bg-surface);
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+}
+
+.about-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  align-items: start;
+}
+
+.about-text {
+  font-size: 17px;
+  line-height: 1.85;
+  color: var(--text-secondary);
+}
+
+.about-text p + p { margin-top: 20px; }
+
+.stats-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+.stat-card {
+  padding: 24px;
+  background: var(--bg-base);
+  border-radius: 12px;
+  border: 1px solid var(--border);
+  transition: all 0.25s cubic-bezier(0.16,1,0.3,1);
+}
+
+.stat-card:hover {
+  border-color: var(--border-hover);
+  transform: translateY(-3px);
+  box-shadow: 0 8px 24px rgba(0,0,0,0.06);
+}
+
+.stat-number {
+  font-size: 36px;
+  font-weight: 800;
+  margin-bottom: 6px;
+}
+
+.stat-card:nth-child(1) .stat-number { color: var(--accent); }
+.stat-card:nth-child(2) .stat-number { color: var(--fundthrough); }
+.stat-card:nth-child(3) .stat-number { color: var(--pwc); }
+.stat-card:nth-child(4) .stat-number { color: var(--kpmg); }
+
+.stat-label {
+  font-size: 12px;
+  color: var(--text-muted);
+  font-weight: 500;
+  font-family: 'JetBrains Mono', monospace;
+  letter-spacing: 0.5px;
+}
+
+/* EXPERIENCE */
+.experience-cards {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.exp-card {
+  border-radius: 16px;
+  padding: 40px;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s cubic-bezier(0.16,1,0.3,1);
+  cursor: default;
+}
+
+.exp-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 16px 48px rgba(0,0,0,0.08);
+}
+
+.exp-card--fundthrough {
+  background: var(--fundthrough-bg);
+  border: 1px solid var(--fundthrough-border);
+}
+
+.exp-card--pwc {
+  background: var(--pwc-bg);
+  border: 1px solid var(--pwc-border);
+}
+
+.exp-card--ey {
+  background: var(--ey-bg);
+  border: 1px solid var(--ey-border);
+}
+
+.exp-card--kpmg {
+  background: var(--kpmg-bg);
+  border: 1px solid var(--kpmg-border);
+}
+
+.exp-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 20px;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.exp-company {
+  font-size: 22px;
+  font-weight: 800;
+  letter-spacing: -0.5px;
+}
+
+.exp-card--fundthrough .exp-company { color: var(--fundthrough); }
+.exp-card--pwc .exp-company { color: var(--pwc); }
+.exp-card--ey .exp-company { color: var(--ey-dark); }
+.exp-card--kpmg .exp-company { color: var(--kpmg); }
+
+.exp-role {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-bottom: 4px;
+}
+
+.exp-meta {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 12px;
+  color: var(--text-muted);
+  letter-spacing: 0.5px;
+}
+
+.exp-location {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 11px;
+  color: var(--text-muted);
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  padding: 6px 12px;
+  border-radius: 6px;
+  background: rgba(0,0,0,0.04);
+}
+
+.exp-desc {
+  font-size: 15px;
+  line-height: 1.7;
+  color: var(--text-secondary);
+  margin-bottom: 16px;
+}
+
+.exp-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 16px;
+}
+
+.exp-tag {
+  font-size: 11px;
+  font-family: 'JetBrains Mono', monospace;
+  padding: 5px 12px;
+  border-radius: 6px;
+  background: rgba(0,0,0,0.05);
+  color: var(--text-secondary);
+  letter-spacing: 0.3px;
+}
+
+.exp-highlights {
+  list-style: none;
+  display: grid;
+  gap: 10px;
+}
+
+.exp-highlights li {
+  font-size: 14px;
+  line-height: 1.6;
+  color: var(--text-secondary);
+  padding-left: 20px;
+  position: relative;
+}
+
+.exp-highlights li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 9px;
+  width: 6px; height: 6px;
+  border-radius: 50%;
+  background: var(--accent);
+}
+
+.exp-industries {
+  margin-top: 20px;
+}
+
+.exp-industries-label {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 10px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  margin-bottom: 10px;
+}
+
+.exp-industries-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.industry-chip {
+  font-size: 12px;
+  padding: 6px 14px;
+  border-radius: 20px;
+  background: var(--bg-surface);
+  border: 1px solid var(--border);
+  color: var(--text-secondary);
+  font-weight: 500;
+}
+
+/* PROJECTS */
+.projects-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+}
+
+.project-card {
+  padding: 32px;
+  border-radius: 16px;
+  background: var(--bg-surface);
+  border: 1px solid var(--border);
+  transition: all 0.3s cubic-bezier(0.16,1,0.3,1);
+}
+
+.project-card:hover {
+  border-color: var(--border-hover);
+  transform: translateY(-4px);
+  box-shadow: 0 16px 48px rgba(0,0,0,0.06);
+}
+
+.project-icon {
+  width: 44px; height: 44px;
+  border-radius: 10px;
+  background: var(--accent-light);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20px;
+  font-size: 20px;
+}
+
+.project-title {
+  font-size: 18px;
+  font-weight: 700;
+  margin-bottom: 8px;
+  letter-spacing: -0.3px;
+}
+
+.project-problem {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 11px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  margin-bottom: 12px;
+}
+
+.project-desc {
+  font-size: 14px;
+  line-height: 1.7;
+  color: var(--text-secondary);
+  margin-bottom: 16px;
+}
+
+.project-outcome {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--accent-dark);
+  padding: 10px 14px;
+  background: var(--accent-light);
+  border-radius: 8px;
+  border-left: 3px solid var(--accent);
+}
+
+/* SKILLS */
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+}
+
+.skill-group {
+  padding: 32px;
+  border-radius: 16px;
+  background: var(--bg-surface);
+  border: 1px solid var(--border);
+  transition: all 0.3s cubic-bezier(0.16,1,0.3,1);
+}
+
+.skill-group:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 32px rgba(0,0,0,0.06);
+  border-color: var(--border-hover);
+}
+
+.skill-group-title {
+  font-size: 14px;
+  font-weight: 700;
+  margin-bottom: 20px;
+  letter-spacing: -0.2px;
+  color: var(--text-primary);
+}
+
+.skill-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.skill-list li {
+  font-size: 13px;
+  color: var(--text-secondary);
+  padding-left: 16px;
+  position: relative;
+  line-height: 1.5;
+}
+
+.skill-list li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 8px;
+  width: 5px; height: 5px;
+  border-radius: 50%;
+  background: var(--accent);
+}
+
+/* BEYOND WORK */
+.beyond {
+  background: var(--bg-surface);
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+}
+
+.beyond-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+}
+
+.beyond-card {
+  padding: 32px;
+  border-radius: 16px;
+  background: var(--bg-base);
+  border: 1px solid var(--border);
+  text-align: center;
+  transition: all 0.3s cubic-bezier(0.16,1,0.3,1);
+}
+
+.beyond-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 32px rgba(0,0,0,0.06);
+  border-color: var(--border-hover);
+}
+
+.beyond-emoji {
+  font-size: 36px;
+  margin-bottom: 16px;
+}
+
+.beyond-card-title {
+  font-size: 16px;
+  font-weight: 700;
+  margin-bottom: 8px;
+}
+
+.beyond-card-desc {
+  font-size: 13px;
+  line-height: 1.7;
+  color: var(--text-secondary);
+}
+
+/* LOOKING FOR */
+.looking-for {
+  background: var(--bg-base);
+}
+
+.looking-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+}
+
+.looking-yes, .looking-no {
+  padding: 32px;
+  border-radius: 16px;
+}
+
+.looking-yes {
+  background: var(--accent-light);
+  border: 1px solid rgba(13,148,136,0.15);
+}
+
+.looking-no {
+  background: #FEF2F2;
+  border: 1px solid rgba(239,68,68,0.12);
+}
+
+.looking-title {
+  font-size: 16px;
+  font-weight: 700;
+  margin-bottom: 16px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.looking-yes .looking-title { color: var(--accent-dark); }
+.looking-no .looking-title { color: #DC2626; }
+
+.looking-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.looking-list li {
+  font-size: 14px;
+  color: var(--text-secondary);
+  padding-left: 20px;
+  position: relative;
+  line-height: 1.6;
+}
+
+.looking-yes .looking-list li::before {
+  content: '+';
+  position: absolute;
+  left: 0;
+  font-weight: 700;
+  color: var(--accent);
+}
+
+.looking-no .looking-list li::before {
+  content: '\2013';
+  position: absolute;
+  left: 0;
+  font-weight: 700;
+  color: #DC2626;
+}
+
+/* CONTACT */
+.contact {
+  text-align: center;
+}
+
+.contact-heading {
+  font-size: clamp(32px, 5vw, 56px);
+  font-weight: 900;
+  letter-spacing: -2px;
+  margin-bottom: 20px;
+  line-height: 1.1;
+}
+
+.contact-heading .highlight {
+  background: linear-gradient(135deg, var(--accent) 0%, var(--fundthrough) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.contact-sub {
+  font-size: 18px;
+  color: var(--text-secondary);
+  line-height: 1.7;
+  max-width: 560px;
+  margin: 0 auto 40px;
+}
+
+.contact-links {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+  flex-wrap: wrap;
+  margin-bottom: 48px;
+}
+
+.contact-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 14px 28px;
+  border-radius: 10px;
+  border: 1px solid var(--border);
+  background: var(--bg-surface);
+  color: var(--text-primary);
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 14px;
+  transition: all 0.25s cubic-bezier(0.16,1,0.3,1);
+}
+
+.contact-link:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(0,0,0,0.06);
+}
+
+.contact-note {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 11px;
+  color: var(--text-muted);
+  letter-spacing: 1px;
+}
+
+/* FOOTER */
+footer {
+  padding: 40px 80px;
+  border-top: 1px solid var(--border);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.footer-text {
+  font-size: 12px;
+  color: var(--text-muted);
+  font-family: 'JetBrains Mono', monospace;
+}
+
+.footer-links {
+  display: flex;
+  gap: 24px;
+  list-style: none;
+}
+
+.footer-links a {
+  font-size: 12px;
+  color: var(--text-muted);
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.footer-links a:hover { color: var(--text-primary); }
+
+/* EDUCATION BADGE */
+.edu-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  padding: 16px 24px;
+  border-radius: 12px;
+  background: var(--bg-base);
+  border: 1px solid var(--border);
+  margin-top: 24px;
+}
+
+.edu-badge-text {
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.edu-badge-sub {
+  font-size: 12px;
+  color: var(--text-muted);
+}
+
+/* VALUE PROPS */
+.value-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  margin-top: 60px;
+}
+
+.value-card {
+  padding: 32px;
+  border-radius: 16px;
+  background: var(--bg-surface);
+  border: 1px solid var(--border);
+  transition: all 0.3s cubic-bezier(0.16,1,0.3,1);
+}
+
+.value-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 32px rgba(0,0,0,0.06);
+  border-color: var(--border-hover);
+}
+
+.value-icon {
+  font-size: 28px;
+  margin-bottom: 16px;
+}
+
+.value-title {
+  font-size: 16px;
+  font-weight: 700;
+  margin-bottom: 10px;
+  letter-spacing: -0.2px;
+}
+
+.value-desc {
+  font-size: 13px;
+  line-height: 1.7;
+  color: var(--text-secondary);
+}
+
+/* CPA BADGE */
+.cpa-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 16px;
+  border-radius: 8px;
+  background: var(--accent-light);
+  border: 1px solid rgba(13,148,136,0.15);
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 11px;
+  color: var(--accent-dark);
+  letter-spacing: 1px;
+  font-weight: 500;
+  margin-bottom: 16px;
+}
+
+/* RESPONSIVE */
+@media (max-width: 1024px) {
+  section { padding: 80px 40px; }
+  .skills-grid { grid-template-columns: 1fr 1fr; }
+  .beyond-grid { grid-template-columns: 1fr 1fr; }
+}
+
+@media (max-width: 900px) {
+  .hero {
+    flex-direction: column;
+    padding: 120px 32px 60px;
+    text-align: center;
+    gap: 32px;
+  }
+  .hero-tag { justify-content: center; }
+  .hero-cta-row { justify-content: center; }
+  .hero-status { justify-content: center; }
+  .about-grid { grid-template-columns: 1fr; }
+  .projects-grid { grid-template-columns: 1fr; }
+  .looking-grid { grid-template-columns: 1fr; }
+  .value-grid { grid-template-columns: 1fr; }
+  .exp-header { flex-direction: column; }
+  footer { flex-direction: column; gap: 16px; text-align: center; }
+}
+
+@media (max-width: 768px) {
+  nav { padding: 14px 20px; }
+  nav.scrolled { padding: 12px 20px; }
+  section { padding: 60px 20px; }
+  .section-title { margin-bottom: 40px; }
+  .skills-grid { grid-template-columns: 1fr; }
+  .beyond-grid { grid-template-columns: 1fr 1fr; }
+  .exp-card { padding: 24px; }
+  footer { padding: 30px 20px; }
+
+  .nav-links { display: none; }
+  .nav-links.open {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 100%;
+    left: 0; right: 0;
+    background: var(--bg-surface);
+    padding: 20px;
+    gap: 20px;
+    border-bottom: 1px solid var(--border);
+    box-shadow: 0 8px 24px rgba(0,0,0,0.08);
+  }
+  .hamburger { display: flex; }
+}
+
+@media (max-width: 480px) {
+  .beyond-grid { grid-template-columns: 1fr; }
+  .hero-name { letter-spacing: -1px; }
+}
+
+/* SCROLL ANIMATIONS */
+.reveal {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a href="#" class="nav-logo">Reem El-Sadaany</a>
+  <ul class="nav-links">
+    <li><a href="#about">About</a></li>
+    <li><a href="#experience">Experience</a></li>
+    <li><a href="#projects">Projects</a></li>
+    <li><a href="#skills">Skills</a></li>
+    <li><a href="#beyond">Beyond Work</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+  <button class="hamburger" onclick="document.querySelector('.nav-links').classList.toggle('open')" aria-label="Menu">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<!-- HERO -->
+<section class="hero" id="hero">
+  <div class="hero-bg-shapes">
+    <div class="hero-shape hero-shape-1"></div>
+    <div class="hero-shape hero-shape-2"></div>
+    <div class="hero-shape hero-shape-3"></div>
+  </div>
+  <div class="hero-content">
+    <div class="hero-tag">CPA &middot; Finance Operator</div>
+    <h1 class="hero-name">Reem<br><span class="highlight">El-Sadaany</span></h1>
+    <p class="hero-desc">
+      Accounting Manager turning complex financial operations into scalable systems.
+      6+ years across fintech, SaaS, and global enterprises. Currently building finance
+      infrastructure at <strong>FundThrough</strong>.
+    </p>
+    <div class="hero-cta-row">
+      <a href="#experience" class="btn-primary">
+        <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M9 5l7 7-7 7"/></svg>
+        View Experience
+      </a>
+      <a href="#contact" class="btn-secondary">
+        <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><path d="M22 6l-10 7L2 6"/></svg>
+        Let's Connect
+      </a>
+      <a href="https://www.linkedin.com/in/reemelsadaany/" target="_blank" class="btn-secondary">
+        <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+        LinkedIn
+      </a>
+    </div>
+    <div class="hero-status">
+      <span class="status-dot"></span>
+      Open to <strong>&nbsp;remote-first startup opportunities</strong>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section class="about" id="about">
+  <div class="section-label reveal">About</div>
+  <h2 class="section-title reveal">I build systems that<br>scale with the business.</h2>
+  <div class="about-grid">
+    <div class="about-text reveal">
+      <div class="cpa-badge">CPA &middot; Ontario ID 61007016 &middot; Active</div>
+      <p>
+        I'm a CPA and Accounting Manager who's spent the last 6+ years figuring out how
+        businesses actually work under the hood. I started in audit at KPMG, moved through
+        EY and PwC across three countries, and saw firsthand how finance can either hold
+        a company back or push it forward.
+      </p>
+      <p>
+        That realization pulled me into startups. At FundThrough, I stopped reviewing businesses
+        from the outside and started building the financial infrastructure from within. Month-end
+        close processes, internal controls, automation pipelines, everything a high-growth company
+        needs to move fast without breaking things.
+      </p>
+      <p>
+        I'm looking for my next chapter: a remote-first startup where I can own finance operations
+        end-to-end and help the team make better decisions faster.
+      </p>
+      <div class="edu-badge">
+        <div>
+          <div class="edu-badge-text">Wilfrid Laurier University</div>
+          <div class="edu-badge-sub">BBA with Distinction (Accounting Major, Economics Minor) &middot; Post-Grad Diploma in Accounting</div>
+        </div>
+      </div>
+    </div>
+    <div class="stats-grid reveal">
+      <div class="stat-card">
+        <div class="stat-number">6+</div>
+        <div class="stat-label">Years Experience</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-number">CPA</div>
+        <div class="stat-label">Since 2023</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-number">3</div>
+        <div class="stat-label">Countries</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-number">4</div>
+        <div class="stat-label">Firms &amp; Companies</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="value-grid reveal">
+    <div class="value-card">
+      <div class="value-icon">&#9881;</div>
+      <div class="value-title">Systems Builder</div>
+      <div class="value-desc">
+        I automate month-end processes, build reconciliation pipelines, and design
+        controls that scale. Less manual work, more reliable output.
+      </div>
+    </div>
+    <div class="value-card">
+      <div class="value-icon">&#9889;</div>
+      <div class="value-title">Operator Mindset</div>
+      <div class="value-desc">
+        I don't just close books. I present to C-suite, manage audit relationships,
+        oversee cash operations, and train teams. Full-stack finance.
+      </div>
+    </div>
+    <div class="value-card">
+      <div class="value-icon">&#127919;</div>
+      <div class="value-title">Startup Ready</div>
+      <div class="value-desc">
+        I made the jump from Big 4 to fintech because I wanted to build, not just review.
+        I thrive in fast-paced, high-ownership environments.
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- EXPERIENCE -->
+<section id="experience">
+  <div class="section-label reveal">Experience</div>
+  <h2 class="section-title reveal">Where I've built,<br>audited, and operated.</h2>
+
+  <div class="experience-cards">
+
+    <!-- FundThrough -->
+    <div class="exp-card exp-card--fundthrough reveal">
+      <div class="exp-header">
+        <div>
+          <div class="exp-company">FundThrough</div>
+          <div class="exp-role">Accounting Manager</div>
+          <div class="exp-meta">May 2024 &ndash; Present</div>
+        </div>
+        <div class="exp-location">Toronto &middot; Fintech</div>
+      </div>
+      <p class="exp-desc">
+        First move from public accounting to building finance from the inside.
+        Leading a team of four, owning the full month-end cycle, and standing up
+        the processes a high-growth fintech needs.
+      </p>
+      <ul class="exp-highlights">
+        <li>Managed and mentored a team of four, running monthly training sessions on core accounting principles</li>
+        <li>Led month-end close: journal entries, bad debt provisions, AP accruals, payroll, and expense adjustments</li>
+        <li>Built Power Query automations to streamline reconciliation processes and reduce manual errors</li>
+        <li>Developed Excel macros for automated data extraction and formatting across reporting workflows</li>
+        <li>Primary liaison for external audit (MNP), coordinating planning, execution, and auditor inquiries</li>
+        <li>Managed daily cash operations and fund disbursement, optimizing liquidity across accounts</li>
+        <li>Presented monthly financial statements to CEO and CFO with variance analysis and commentary</li>
+        <li>Oversaw external financial reporting to lenders, ensuring covenant compliance</li>
+      </ul>
+      <div class="exp-tags">
+        <span class="exp-tag">NetSuite</span>
+        <span class="exp-tag">Power Query</span>
+        <span class="exp-tag">Excel Macros</span>
+        <span class="exp-tag">Month-End Close</span>
+        <span class="exp-tag">Team Leadership</span>
+      </div>
+    </div>
+
+    <!-- PwC -->
+    <div class="exp-card exp-card--pwc reveal">
+      <div class="exp-header">
+        <div>
+          <div class="exp-company">PwC</div>
+          <div class="exp-role">Senior Accountant &middot; Audit (Portfolio Lead)</div>
+          <div class="exp-meta">Oct 2022 &ndash; Apr 2024</div>
+        </div>
+        <div class="exp-location">Dubai, UAE</div>
+      </div>
+      <p class="exp-desc">
+        Managed a $1M+ client portfolio across retail, education, and telecom sectors.
+        Led cross-functional teams across Dubai, Lagos, and London offices.
+      </p>
+      <ul class="exp-highlights">
+        <li>Managed diverse client portfolio exceeding $1M in billing, overseeing project management, resourcing, and execution</li>
+        <li>18-month engagement leading the Al-Futtaim Group audit, including Inditex subsidiaries (Zara, Massimo Dutti, Bershka)</li>
+        <li>Acting manager on Dubai International School audit, overseeing team and client delivery</li>
+        <li>Led IHS Towers engagement across Dubai, Nigeria, and London offices</li>
+        <li>Presented financial statements and disclosures to stakeholders with clear performance insights</li>
+        <li>Evaluated internal controls using the COSO framework to shape audit approach</li>
+      </ul>
+      <div class="exp-industries">
+        <div class="exp-industries-label">Industries</div>
+        <div class="exp-industries-list">
+          <span class="industry-chip">Global Retail</span>
+          <span class="industry-chip">Education</span>
+          <span class="industry-chip">Telecom Infrastructure</span>
+          <span class="industry-chip">Conglomerates</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- EY -->
+    <div class="exp-card exp-card--ey reveal">
+      <div class="exp-header">
+        <div>
+          <div class="exp-company">EY</div>
+          <div class="exp-role">Senior Accountant II &middot; Audit</div>
+          <div class="exp-meta">Jan 2022 &ndash; Oct 2022</div>
+        </div>
+        <div class="exp-location">Toronto</div>
+      </div>
+      <p class="exp-desc">
+        Worked on complex audit engagements for manufacturers preparing for public markets,
+        including IPO readiness.
+      </p>
+      <ul class="exp-highlights">
+        <li>Key team member on Husky Technologies audit, preparing financial statements ahead of NYSE listing (now GPGI, valued at ~$7.4B)</li>
+        <li>Dye & Durham (software company) audit engagement, gaining SaaS industry exposure</li>
+        <li>Supported IPO/transaction readiness through detailed financial reporting and disclosure preparation</li>
+      </ul>
+      <div class="exp-industries">
+        <div class="exp-industries-label">Industries</div>
+        <div class="exp-industries-list">
+          <span class="industry-chip">Manufacturing</span>
+          <span class="industry-chip">SaaS / Software</span>
+          <span class="industry-chip">IPO Readiness</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- KPMG -->
+    <div class="exp-card exp-card--kpmg reveal">
+      <div class="exp-header">
+        <div>
+          <div class="exp-company">KPMG</div>
+          <div class="exp-role">Staff / Senior Accountant I &middot; Audit</div>
+          <div class="exp-meta">Jan 2020 &ndash; Jan 2022</div>
+        </div>
+        <div class="exp-location">Waterloo</div>
+      </div>
+      <p class="exp-desc">
+        Where it all started. Audited companies across agriculture, manufacturing, food,
+        enterprise software, education, and government sectors.
+      </p>
+      <ul class="exp-highlights">
+        <li>OpenText (enterprise software) &mdash; large-scale software company audit</li>
+        <li>Wilfrid Laurier University &mdash; audited grants and institutional financials</li>
+        <li>City of Kitchener &mdash; municipal government audit</li>
+        <li>Semex (agriculture), Mammoet (heavy lift), Dare Foods &mdash; diverse industry exposure</li>
+        <li>OTIP (insurance) &mdash; Ontario Teachers' Insurance Plan</li>
+      </ul>
+      <div class="exp-industries">
+        <div class="exp-industries-label">Industries</div>
+        <div class="exp-industries-list">
+          <span class="industry-chip">Enterprise Software</span>
+          <span class="industry-chip">Agriculture</span>
+          <span class="industry-chip">Government</span>
+          <span class="industry-chip">Education</span>
+          <span class="industry-chip">Insurance</span>
+          <span class="industry-chip">Food &amp; Bev</span>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- PROJECTS -->
+<section id="projects" style="background: var(--bg-surface); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border);">
+  <div class="section-label reveal">Projects</div>
+  <h2 class="section-title reveal">Problems I've solved.</h2>
+
+  <div class="projects-grid">
+    <div class="project-card reveal">
+      <div class="project-icon">&#9881;</div>
+      <div class="project-title">Automating Month-End Close</div>
+      <div class="project-problem">Problem</div>
+      <p class="project-desc">
+        Manual, error-prone month-end processes eating up team bandwidth and delaying
+        financial reporting at FundThrough.
+      </p>
+      <div class="project-problem">Approach</div>
+      <p class="project-desc">
+        Built Excel macros for automated data extraction and Power Query pipelines
+        to streamline reconciliation workflows.
+      </p>
+      <div class="project-outcome">
+        Faster close cycles, fewer manual errors, more time for analysis over data entry.
+      </div>
+    </div>
+
+    <div class="project-card reveal">
+      <div class="project-icon">&#128203;</div>
+      <div class="project-title">External Audit Leadership</div>
+      <div class="project-problem">Problem</div>
+      <p class="project-desc">
+        First external audit as an internal team, coordinating with MNP while
+        maintaining daily operations.
+      </p>
+      <div class="project-problem">Approach</div>
+      <p class="project-desc">
+        Served as primary liaison, managed audit planning, organized documentation,
+        and streamlined auditor communication.
+      </p>
+      <div class="project-outcome">
+        Smooth audit delivery with no material findings. Built repeatable audit-readiness process.
+      </div>
+    </div>
+
+    <div class="project-card reveal">
+      <div class="project-icon">&#128274;</div>
+      <div class="project-title">Internal Controls Buildout</div>
+      <div class="project-problem">Problem</div>
+      <p class="project-desc">
+        Growing fintech startup lacked formal internal controls, increasing operational
+        risk as the business scaled.
+      </p>
+      <div class="project-problem">Approach</div>
+      <p class="project-desc">
+        Designed and implemented control frameworks covering AP processes, vendor
+        vetting, expense approvals, and reconciliation reviews.
+      </p>
+      <div class="project-outcome">
+        Reduced operational risk and built a controls foundation that scales with growth.
+      </div>
+    </div>
+
+    <div class="project-card reveal">
+      <div class="project-icon">&#128200;</div>
+      <div class="project-title">Financial Reporting Overhaul</div>
+      <div class="project-problem">Problem</div>
+      <p class="project-desc">
+        Leadership needed clearer financial visibility into monthly performance
+        and key business drivers.
+      </p>
+      <div class="project-problem">Approach</div>
+      <p class="project-desc">
+        Redesigned monthly reporting with variance analysis and driver-based
+        commentary for CEO and CFO presentations.
+      </p>
+      <div class="project-outcome">
+        Leadership gets actionable insights monthly, not just numbers. Better decisions, faster.
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SKILLS -->
+<section id="skills">
+  <div class="section-label reveal">Skills</div>
+  <h2 class="section-title reveal">What I work with.</h2>
+
+  <div class="skills-grid">
+    <div class="skill-group reveal">
+      <div class="skill-group-title">Finance &amp; Accounting</div>
+      <ul class="skill-list">
+        <li>IFRS</li>
+        <li>US GAAP &amp; Canadian GAAP</li>
+        <li>Financial Reporting &amp; Analysis</li>
+        <li>Audit &amp; Internal Controls</li>
+        <li>COSO Framework</li>
+        <li>OECD Transfer Pricing</li>
+        <li>Tax Compliance (T5, SR&amp;ED, 1099)</li>
+      </ul>
+    </div>
+    <div class="skill-group reveal">
+      <div class="skill-group-title">Data &amp; Systems</div>
+      <ul class="skill-list">
+        <li>NetSuite</li>
+        <li>SAP</li>
+        <li>Oracle</li>
+        <li>Power BI</li>
+        <li>Excel (Advanced &middot; Macros &middot; VBA)</li>
+        <li>Power Query</li>
+      </ul>
+    </div>
+    <div class="skill-group reveal">
+      <div class="skill-group-title">Operator Skills</div>
+      <ul class="skill-list">
+        <li>Process Design &amp; Automation</li>
+        <li>Month-End Close Management</li>
+        <li>Cash &amp; Liquidity Management</li>
+        <li>Cross-Functional Collaboration</li>
+        <li>Stakeholder Communication</li>
+        <li>Team Leadership &amp; Mentoring</li>
+      </ul>
+    </div>
+    <div class="skill-group reveal">
+      <div class="skill-group-title">Languages</div>
+      <ul class="skill-list">
+        <li>English (Fluent)</li>
+        <li>Arabic (Fluent)</li>
+        <li>French (Proficient)</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- BEYOND WORK -->
+<section class="beyond" id="beyond">
+  <div class="section-label reveal">Beyond Work</div>
+  <h2 class="section-title reveal">When I'm not closing books.</h2>
+
+  <div class="beyond-grid">
+    <div class="beyond-card reveal">
+      <div class="beyond-emoji">&#127758;</div>
+      <div class="beyond-card-title">Travel</div>
+      <div class="beyond-card-desc">
+        Exploring new cities and cultures. Lived in Canada, UAE, and love discovering
+        how different places shape how people think.
+      </div>
+    </div>
+    <div class="beyond-card reveal">
+      <div class="beyond-emoji">&#127947;</div>
+      <div class="beyond-card-title">Fitness</div>
+      <div class="beyond-card-desc">
+        Consistency over intensity. An active lifestyle keeps me disciplined,
+        focused, and energized for the work that matters.
+      </div>
+    </div>
+    <div class="beyond-card reveal">
+      <div class="beyond-emoji">&#127843;</div>
+      <div class="beyond-card-title">Food</div>
+      <div class="beyond-card-desc">
+        Always hunting for the next great restaurant. Trying new cuisines is one of
+        the best ways to experience a city.
+      </div>
+    </div>
+    <div class="beyond-card reveal">
+      <div class="beyond-emoji">&#128087;</div>
+      <div class="beyond-card-title">Style</div>
+      <div class="beyond-card-desc">
+        Fashion is personal expression. I keep it modern, intentional, and a reflection
+        of how I approach everything else.
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WHAT I'M LOOKING FOR -->
+<section class="looking-for" id="looking-for">
+  <div class="section-label reveal">What I'm Looking For</div>
+  <h2 class="section-title reveal">The right fit matters.</h2>
+
+  <div class="looking-grid">
+    <div class="looking-yes reveal">
+      <div class="looking-title">
+        <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg>
+        Ideal Environment
+      </div>
+      <ul class="looking-list">
+        <li>Remote-first or hybrid teams</li>
+        <li>High-growth startups (Series A&ndash;D)</li>
+        <li>Fintech, SaaS, AI, or cybersecurity</li>
+        <li>Ownership and real impact on the business</li>
+        <li>Fast-paced, builder culture</li>
+        <li>Direct line to leadership</li>
+      </ul>
+    </div>
+    <div class="looking-no reveal">
+      <div class="looking-title">
+        <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M18 6L6 18M6 6l12 12"/></svg>
+        Probably Not a Fit
+      </div>
+      <ul class="looking-list">
+        <li>Fully in-office, 5 days a week</li>
+        <li>Bureaucratic, slow-moving organizations</li>
+        <li>Purely compliance-focused roles</li>
+        <li>Low-impact, execution-only positions</li>
+        <li>No path to ownership or growth</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="contact" id="contact">
+  <div class="section-label reveal" style="justify-content: center;">Get In Touch</div>
+  <h2 class="contact-heading reveal">Building something<br><span class="highlight">exciting?</span></h2>
+  <p class="contact-sub reveal">
+    I'm looking for my next role at a high-growth startup where finance
+    is a strategic function, not just a back office. Let's talk.
+  </p>
+  <div class="contact-links reveal">
+    <a href="mailto:r.elsadaany@gmail.com" class="contact-link">
+      <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><path d="M22 6l-10 7L2 6"/></svg>
+      r.elsadaany@gmail.com
+    </a>
+    <a href="https://www.linkedin.com/in/reemelsadaany/" target="_blank" class="contact-link">
+      <svg width="18" height="18" fill="currentColor" viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+      LinkedIn
+    </a>
+    <a href="tel:+16476142673" class="contact-link">
+      <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"/></svg>
+      (647) 614-2673
+    </a>
+  </div>
+  <div class="contact-note reveal">
+    Actively exploring roles in fintech, SaaS, AI, and cybersecurity startups.
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <span class="footer-text">&copy; 2025 Reem El-Sadaany</span>
+  <ul class="footer-links">
+    <li><a href="mailto:r.elsadaany@gmail.com">Email</a></li>
+    <li><a href="https://www.linkedin.com/in/reemelsadaany/" target="_blank">LinkedIn</a></li>
+    <li><a href="#hero">Back to Top</a></li>
+  </ul>
+</footer>
+
+<script>
+// Nav scroll effect
+window.addEventListener('scroll', () => {
+  document.querySelector('nav').classList.toggle('scrolled', window.scrollY > 50);
+});
+
+// Close mobile menu on link click
+document.querySelectorAll('.nav-links a').forEach(link => {
+  link.addEventListener('click', () => {
+    document.querySelector('.nav-links').classList.remove('open');
+  });
+});
+
+// Scroll reveal
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('visible');
+    }
+  });
+}, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+
+document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+</script>
+
+</body>
+</html>
