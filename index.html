@@ -1128,41 +1128,24 @@ footer {
   opacity: 0;
   animation: fadeUp 0.6s ease forwards 1.2s;
   text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  color: var(--text-muted);
+  font-size: 13px;
+  font-weight: 500;
+  transition: color 0.2s;
 }
 
-.scroll-mouse {
-  width: 26px;
-  height: 42px;
-  border: 2px solid var(--text-muted);
-  border-radius: 14px;
-  position: relative;
-  transition: border-color 0.3s;
+.scroll-hint:hover { color: var(--accent); }
+
+.scroll-hint svg {
+  animation: bounce 2s ease-in-out infinite;
 }
 
-.scroll-hint:hover .scroll-mouse {
-  border-color: var(--accent);
-}
-
-.scroll-wheel {
-  width: 4px;
-  height: 8px;
-  background: var(--text-muted);
-  border-radius: 2px;
-  position: absolute;
-  left: 50%;
-  top: 8px;
-  transform: translateX(-50%);
-  animation: scrollDown 1.8s ease-in-out infinite;
-}
-
-.scroll-hint:hover .scroll-wheel {
-  background: var(--accent);
-}
-
-@keyframes scrollDown {
-  0% { opacity: 1; top: 8px; }
-  50% { opacity: 1; }
-  100% { opacity: 0; top: 24px; }
+@keyframes bounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(4px); }
 }
 
 /* SCROLL ANIMATIONS */
@@ -1229,10 +1212,9 @@ footer {
   <div class="hero-photo-wrap">
     <img src="reemelsadaany.jpeg" alt="Reem El-Sadaany" class="hero-photo" width="380" height="380" loading="eager">
   </div>
-  <a href="#about" class="scroll-hint" aria-label="Scroll down">
-    <div class="scroll-mouse">
-      <div class="scroll-wheel"></div>
-    </div>
+  <a href="#experience" class="scroll-hint" aria-label="View Experience">
+    <span class="scroll-hint-text">View Experience</span>
+    <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg>
   </a>
 </section>
 
