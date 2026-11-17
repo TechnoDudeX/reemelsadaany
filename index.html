@@ -15,7 +15,7 @@
 <meta name="twitter:image" content="og-image.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
 <style>
 *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
 
@@ -55,6 +55,80 @@
   --white: #FFFFFF;
   --gray-100: #F1F5F9;
   --gray-200: #E2E8F0;
+
+  --looking-no-bg: #FEF2F2;
+  --looking-no-border: rgba(239,68,68,0.12);
+  --looking-no-text: #DC2626;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg-base: #0F172A;
+    --bg-surface: #1E293B;
+    --bg-card: #1E293B;
+    --border: #334155;
+    --border-hover: #475569;
+
+    --text-primary: #F1F5F9;
+    --text-secondary: #CBD5E1;
+    --text-muted: #94A3B8;
+
+    --accent-light: rgba(15,118,110,0.15);
+    --accent-dark: #5EEAD4;
+
+    --fundthrough-bg: rgba(99,102,241,0.1);
+    --fundthrough-border: rgba(99,102,241,0.25);
+
+    --pwc-bg: rgba(217,119,6,0.1);
+    --pwc-border: rgba(217,119,6,0.25);
+
+    --ey-bg: rgba(250,204,21,0.08);
+    --ey-border: rgba(250,204,21,0.2);
+
+    --kpmg-bg: rgba(37,99,235,0.1);
+    --kpmg-border: rgba(37,99,235,0.25);
+
+    --gray-100: #1E293B;
+    --gray-200: #334155;
+
+    --looking-no-bg: rgba(239,68,68,0.08);
+    --looking-no-border: rgba(239,68,68,0.2);
+    --looking-no-text: #F87171;
+  }
+}
+
+:root[data-theme="dark"] {
+  --bg-base: #0F172A;
+  --bg-surface: #1E293B;
+  --bg-card: #1E293B;
+  --border: #334155;
+  --border-hover: #475569;
+
+  --text-primary: #F1F5F9;
+  --text-secondary: #CBD5E1;
+  --text-muted: #94A3B8;
+
+  --accent-light: rgba(15,118,110,0.15);
+  --accent-dark: #5EEAD4;
+
+  --fundthrough-bg: rgba(99,102,241,0.1);
+  --fundthrough-border: rgba(99,102,241,0.25);
+
+  --pwc-bg: rgba(217,119,6,0.1);
+  --pwc-border: rgba(217,119,6,0.25);
+
+  --ey-bg: rgba(250,204,21,0.08);
+  --ey-border: rgba(250,204,21,0.2);
+
+  --kpmg-bg: rgba(37,99,235,0.1);
+  --kpmg-border: rgba(37,99,235,0.25);
+
+  --gray-100: #1E293B;
+  --gray-200: #334155;
+
+  --looking-no-bg: rgba(239,68,68,0.08);
+  --looking-no-border: rgba(239,68,68,0.2);
+  --looking-no-text: #F87171;
 }
 
 html { scroll-behavior: smooth; }
@@ -65,6 +139,11 @@ body {
   color: var(--text-primary);
   overflow-x: hidden;
   -webkit-font-smoothing: antialiased;
+}
+
+::selection {
+  background: var(--accent);
+  color: #fff;
 }
 
 /* NAV */
@@ -83,6 +162,21 @@ nav {
   transition: all 0.3s ease;
 }
 
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) nav {
+    background: rgba(15,23,42,0.85);
+  }
+  :root:not([data-theme="light"]) nav.scrolled {
+    background: rgba(30,41,59,0.95);
+  }
+}
+:root[data-theme="dark"] nav {
+  background: rgba(15,23,42,0.85);
+}
+:root[data-theme="dark"] nav.scrolled {
+  background: rgba(30,41,59,0.95);
+}
+
 nav.scrolled {
   padding: 12px 40px;
   background: rgba(255,255,255,0.95);
@@ -90,11 +184,9 @@ nav.scrolled {
 }
 
 .nav-logo {
-  font-family: 'JetBrains Mono', monospace;
-  font-weight: 500;
-  font-size: 14px;
-  letter-spacing: 2px;
-  text-transform: uppercase;
+  font-weight: 700;
+  font-size: 15px;
+  letter-spacing: -0.3px;
   color: var(--text-primary);
   text-decoration: none;
 }
@@ -108,9 +200,8 @@ nav.scrolled {
 .nav-links a {
   text-decoration: none;
   color: var(--text-secondary);
-  font-size: 13px;
+  font-size: 14px;
   font-weight: 500;
-  letter-spacing: 0.3px;
   transition: color 0.2s;
   position: relative;
 }
@@ -134,7 +225,11 @@ nav.scrolled {
   cursor: pointer;
   background: none;
   border: none;
-  padding: 4px;
+  padding: 8px;
+  min-width: 44px;
+  min-height: 44px;
+  align-items: center;
+  justify-content: center;
 }
 
 .hamburger span {
@@ -235,45 +330,20 @@ nav.scrolled {
   flex: 1;
 }
 
-.hero-tag {
-  font-family: 'JetBrains Mono', monospace;
-  font-size: 12px;
-  letter-spacing: 3px;
-  text-transform: uppercase;
-  color: var(--accent);
-  margin-bottom: 24px;
-  opacity: 0;
-  transform: translateY(20px);
-  animation: fadeUp 0.6s ease forwards 0.2s;
-  display: inline-flex;
-  align-items: center;
-  gap: 10px;
-}
-
-.hero-tag::before {
-  content: '';
-  display: inline-block;
-  width: 24px; height: 1px;
-  background: var(--accent);
-}
-
 .hero-name {
   font-size: clamp(48px, 7vw, 84px);
   font-weight: 900;
   line-height: 1.05;
-  letter-spacing: -2px;
+  letter-spacing: -1px;
   margin-bottom: 24px;
   opacity: 0;
   transform: translateY(30px);
-  animation: fadeUp 0.6s ease forwards 0.4s;
+  animation: fadeUp 0.6s ease forwards 0.2s;
   color: var(--text-primary);
 }
 
 .hero-name .highlight {
-  background: linear-gradient(135deg, var(--accent) 0%, var(--fundthrough) 50%, var(--pwc) 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
+  color: var(--accent);
 }
 
 .hero-desc {
@@ -284,7 +354,7 @@ nav.scrolled {
   margin-bottom: 40px;
   opacity: 0;
   transform: translateY(30px);
-  animation: fadeUp 0.6s ease forwards 0.6s;
+  animation: fadeUp 0.6s ease forwards 0.4s;
 }
 
 .hero-cta-row {
@@ -294,7 +364,7 @@ nav.scrolled {
   flex-wrap: wrap;
   opacity: 0;
   transform: translateY(30px);
-  animation: fadeUp 0.6s ease forwards 0.8s;
+  animation: fadeUp 0.6s ease forwards 0.6s;
 }
 
 .btn-primary {
@@ -303,7 +373,7 @@ nav.scrolled {
   gap: 8px;
   padding: 13px 24px;
   background: var(--text-primary);
-  color: #FFFFFF;
+  color: var(--bg-base);
   text-decoration: none;
   border-radius: 8px;
   font-weight: 600;
@@ -315,8 +385,9 @@ nav.scrolled {
 .btn-primary:hover {
   background: var(--accent);
   border-color: var(--accent);
+  color: #fff;
   transform: translateY(-2px);
-  box-shadow: 0 8px 24px rgba(13,148,136,0.25);
+  box-shadow: 0 8px 24px rgba(15,118,110,0.25);
 }
 
 .btn-secondary {
@@ -346,9 +417,8 @@ nav.scrolled {
   gap: 10px;
   margin-top: 48px;
   opacity: 0;
-  animation: fadeUp 0.6s ease forwards 1s;
-  font-family: 'JetBrains Mono', monospace;
-  font-size: 12px;
+  animation: fadeUp 0.6s ease forwards 0.8s;
+  font-size: 13px;
   color: var(--text-secondary);
 }
 
@@ -356,13 +426,7 @@ nav.scrolled {
   width: 7px; height: 7px;
   background: var(--green);
   border-radius: 50%;
-  animation: pulse 2s ease-in-out infinite;
   flex-shrink: 0;
-}
-
-@keyframes pulse {
-  0%, 100% { box-shadow: 0 0 0 0 rgba(16,185,129,0.4); }
-  50% { box-shadow: 0 0 0 5px rgba(16,185,129,0); }
 }
 
 .hero-status strong { color: var(--text-primary); font-weight: 600; }
@@ -374,29 +438,10 @@ nav.scrolled {
 /* SECTIONS */
 section { padding: 100px 80px; position: relative; }
 
-.section-label {
-  font-family: 'JetBrains Mono', monospace;
-  font-size: 12px;
-  letter-spacing: 4px;
-  text-transform: uppercase;
-  color: var(--accent);
-  margin-bottom: 12px;
-  display: flex;
-  align-items: center;
-  gap: 10px;
-}
-
-.section-label::before {
-  content: '';
-  display: inline-block;
-  width: 18px; height: 2px;
-  background: var(--accent);
-}
-
 .section-title {
   font-size: clamp(28px, 4vw, 44px);
   font-weight: 800;
-  letter-spacing: -1.5px;
+  letter-spacing: -0.5px;
   margin-bottom: 60px;
   line-height: 1.1;
   color: var(--text-primary);
@@ -456,11 +501,9 @@ section { padding: 100px 80px; position: relative; }
 .stat-card:nth-child(4) .stat-number { color: var(--kpmg); }
 
 .stat-label {
-  font-size: 12px;
+  font-size: 13px;
   color: var(--text-muted);
   font-weight: 500;
-  font-family: 'JetBrains Mono', monospace;
-  letter-spacing: 0.5px;
 }
 
 /* EXPERIENCE */
@@ -501,14 +544,14 @@ section { padding: 100px 80px; position: relative; }
   align-items: center;
   gap: 6px;
   margin-top: 12px;
-  font-family: 'JetBrains Mono', monospace;
-  font-size: 12px;
+  font-size: 13px;
   color: var(--text-muted);
   background: none;
   border: none;
   cursor: pointer;
   padding: 0;
   transition: color 0.2s;
+  font-family: inherit;
 }
 
 .exp-toggle:hover { color: var(--text-primary); }
@@ -553,7 +596,7 @@ section { padding: 100px 80px; position: relative; }
 .exp-company {
   font-size: 22px;
   font-weight: 800;
-  letter-spacing: -0.5px;
+  letter-spacing: -0.3px;
 }
 
 .exp-card--fundthrough .exp-company { color: var(--fundthrough); }
@@ -569,22 +612,23 @@ section { padding: 100px 80px; position: relative; }
 }
 
 .exp-meta {
-  font-family: 'JetBrains Mono', monospace;
-  font-size: 12px;
+  font-size: 13px;
   color: var(--text-muted);
-  letter-spacing: 0.5px;
 }
 
 .exp-location {
-  font-family: 'JetBrains Mono', monospace;
-  font-size: 12px;
-  color: var(--text-muted);
-  letter-spacing: 1px;
-  text-transform: uppercase;
+  font-size: 13px;
+  color: var(--text-secondary);
+  font-weight: 500;
   padding: 6px 12px;
   border-radius: 6px;
   background: rgba(0,0,0,0.04);
 }
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) .exp-location { background: rgba(255,255,255,0.06); }
+}
+:root[data-theme="dark"] .exp-location { background: rgba(255,255,255,0.06); }
 
 .exp-desc {
   font-size: 15px;
@@ -601,14 +645,17 @@ section { padding: 100px 80px; position: relative; }
 }
 
 .exp-tag {
-  font-size: 12px;
-  font-family: 'JetBrains Mono', monospace;
+  font-size: 13px;
   padding: 5px 12px;
   border-radius: 6px;
   background: rgba(0,0,0,0.05);
   color: var(--text-secondary);
-  letter-spacing: 0.3px;
 }
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) .exp-tag { background: rgba(255,255,255,0.08); }
+}
+:root[data-theme="dark"] .exp-tag { background: rgba(255,255,255,0.08); }
 
 .exp-highlights {
   list-style: none;
@@ -639,10 +686,10 @@ section { padding: 100px 80px; position: relative; }
 }
 
 .exp-industries-label {
-  font-family: 'JetBrains Mono', monospace;
   font-size: 12px;
-  letter-spacing: 2px;
+  font-weight: 600;
   text-transform: uppercase;
+  letter-spacing: 1px;
   color: var(--text-muted);
   margin-bottom: 10px;
 }
@@ -654,7 +701,7 @@ section { padding: 100px 80px; position: relative; }
 }
 
 .industry-chip {
-  font-size: 12px;
+  font-size: 13px;
   padding: 6px 14px;
   border-radius: 20px;
   background: var(--bg-surface);
@@ -692,7 +739,12 @@ section { padding: 100px 80px; position: relative; }
   align-items: center;
   justify-content: center;
   margin-bottom: 20px;
-  font-size: 20px;
+  color: var(--accent);
+}
+
+.project-icon svg {
+  width: 22px;
+  height: 22px;
 }
 
 .project-title {
@@ -703,10 +755,10 @@ section { padding: 100px 80px; position: relative; }
 }
 
 .project-problem {
-  font-family: 'JetBrains Mono', monospace;
-  font-size: 11px;
-  letter-spacing: 1px;
+  font-size: 12px;
+  font-weight: 600;
   text-transform: uppercase;
+  letter-spacing: 0.5px;
   color: var(--text-muted);
   margin-bottom: 12px;
 }
@@ -725,7 +777,6 @@ section { padding: 100px 80px; position: relative; }
   padding: 10px 14px;
   background: var(--accent-light);
   border-radius: 8px;
-  border-left: 3px solid var(--accent);
 }
 
 /* SKILLS */
@@ -810,9 +861,18 @@ section { padding: 100px 80px; position: relative; }
   border-color: var(--border-hover);
 }
 
-.beyond-emoji {
-  font-size: 36px;
-  margin-bottom: 16px;
+.beyond-icon {
+  width: 48px; height: 48px;
+  margin: 0 auto 16px;
+  color: var(--accent);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.beyond-icon svg {
+  width: 28px;
+  height: 28px;
 }
 
 .beyond-card-title {
@@ -845,12 +905,12 @@ section { padding: 100px 80px; position: relative; }
 
 .looking-yes {
   background: var(--accent-light);
-  border: 1px solid rgba(13,148,136,0.15);
+  border: 1px solid rgba(15,118,110,0.15);
 }
 
 .looking-no {
-  background: #FEF2F2;
-  border: 1px solid rgba(239,68,68,0.12);
+  background: var(--looking-no-bg);
+  border: 1px solid var(--looking-no-border);
 }
 
 .looking-title {
@@ -863,7 +923,7 @@ section { padding: 100px 80px; position: relative; }
 }
 
 .looking-yes .looking-title { color: var(--accent-dark); }
-.looking-no .looking-title { color: #DC2626; }
+.looking-no .looking-title { color: var(--looking-no-text); }
 
 .looking-list {
   list-style: none;
@@ -893,7 +953,7 @@ section { padding: 100px 80px; position: relative; }
   position: absolute;
   left: 0;
   font-weight: 700;
-  color: #DC2626;
+  color: var(--looking-no-text);
 }
 
 /* CONTACT */
@@ -904,16 +964,13 @@ section { padding: 100px 80px; position: relative; }
 .contact-heading {
   font-size: clamp(32px, 5vw, 56px);
   font-weight: 900;
-  letter-spacing: -2px;
+  letter-spacing: -1px;
   margin-bottom: 20px;
   line-height: 1.1;
 }
 
 .contact-heading .highlight {
-  background: linear-gradient(135deg, var(--accent) 0%, var(--fundthrough) 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
+  color: var(--accent);
 }
 
 .contact-sub {
@@ -955,10 +1012,8 @@ section { padding: 100px 80px; position: relative; }
 }
 
 .contact-note {
-  font-family: 'JetBrains Mono', monospace;
-  font-size: 12px;
+  font-size: 13px;
   color: var(--text-muted);
-  letter-spacing: 1px;
 }
 
 /* FOOTER */
@@ -971,9 +1026,8 @@ footer {
 }
 
 .footer-text {
-  font-size: 12px;
+  font-size: 13px;
   color: var(--text-muted);
-  font-family: 'JetBrains Mono', monospace;
 }
 
 .footer-links {
@@ -983,7 +1037,7 @@ footer {
 }
 
 .footer-links a {
-  font-size: 12px;
+  font-size: 13px;
   color: var(--text-muted);
   text-decoration: none;
   transition: color 0.2s;
@@ -1036,8 +1090,19 @@ footer {
 }
 
 .value-icon {
-  font-size: 28px;
+  width: 44px; height: 44px;
+  border-radius: 10px;
+  background: var(--accent-light);
+  display: flex;
+  align-items: center;
+  justify-content: center;
   margin-bottom: 16px;
+  color: var(--accent);
+}
+
+.value-icon svg {
+  width: 22px;
+  height: 22px;
 }
 
 .value-title {
@@ -1061,12 +1126,10 @@ footer {
   padding: 8px 16px;
   border-radius: 8px;
   background: var(--accent-light);
-  border: 1px solid rgba(13,148,136,0.15);
-  font-family: 'JetBrains Mono', monospace;
-  font-size: 11px;
+  border: 1px solid rgba(15,118,110,0.15);
+  font-size: 12px;
   color: var(--accent-dark);
-  letter-spacing: 1px;
-  font-weight: 500;
+  font-weight: 600;
   margin-bottom: 16px;
 }
 
@@ -1084,7 +1147,6 @@ footer {
     text-align: center;
     gap: 32px;
   }
-  .hero-tag { justify-content: center; }
   .hero-cta-row { justify-content: center; }
   .hero-status { justify-content: center; }
   .about-grid { grid-template-columns: 1fr; }
@@ -1123,7 +1185,6 @@ footer {
 
 @media (max-width: 480px) {
   .beyond-grid { grid-template-columns: 1fr; }
-  .hero-name { letter-spacing: -1px; }
 }
 
 /* SCROLL HINT */
@@ -1134,7 +1195,7 @@ footer {
   transform: translateX(-50%);
   z-index: 2;
   opacity: 0;
-  animation: fadeUp 0.6s ease forwards 1.2s;
+  animation: fadeUp 0.6s ease forwards 1s;
   text-decoration: none;
   display: flex;
   align-items: center;
@@ -1148,12 +1209,12 @@ footer {
 .scroll-hint:hover { color: var(--accent); }
 
 .scroll-hint svg {
-  animation: bounce 2s ease-in-out infinite;
+  animation: drift 2s ease-in-out infinite;
 }
 
-@keyframes bounce {
-  0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(4px); }
+@keyframes drift {
+  0%, 100% { transform: translateY(0); opacity: 1; }
+  50% { transform: translateY(4px); opacity: 0.6; }
 }
 
 /* SCROLL ANIMATIONS */
@@ -1166,6 +1227,21 @@ footer {
 .reveal.visible {
   opacity: 1;
   transform: translateY(0);
+}
+
+/* REDUCED MOTION */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+  .reveal { opacity: 1; transform: none; }
+  .hero-name, .hero-desc, .hero-cta-row, .hero-status, .hero-photo-wrap, .scroll-hint {
+    opacity: 1;
+    transform: none;
+  }
+  html { scroll-behavior: auto; }
 }
 </style>
 </head>
@@ -1195,7 +1271,6 @@ footer {
     <div class="hero-shape hero-shape-3"></div>
   </div>
   <div class="hero-content">
-    <div class="hero-tag">CPA &middot; Customer Success &amp; Finance</div>
     <h1 class="hero-name">Reem<br><span class="highlight">El-Sadaany</span></h1>
     <p class="hero-desc">
       CPA with 6+ years across fintech and Big Four, combining client relationship
@@ -1208,7 +1283,7 @@ footer {
         <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
         Resume
       </a>
-      <a href="https://www.linkedin.com/in/reemelsadaany/" target="_blank" class="btn-secondary">
+      <a href="https://www.linkedin.com/in/reemelsadaany/" target="_blank" rel="noopener" class="btn-secondary">
         <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
         Let's Connect
       </a>
@@ -1229,7 +1304,6 @@ footer {
 
 <!-- ABOUT -->
 <section class="about" id="about">
-  <div class="section-label reveal">About</div>
   <h2 class="section-title reveal">Finance expertise meets<br>client success.</h2>
   <div class="about-grid">
     <div class="about-text reveal">
@@ -1275,7 +1349,9 @@ footer {
 
   <div class="value-grid reveal">
     <div class="value-card">
-      <div class="value-icon">&#129309;</div>
+      <div class="value-icon">
+        <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87"/><path d="M16 3.13a4 4 0 010 7.75"/></svg>
+      </div>
       <div class="value-title">Client Relationship Expert</div>
       <div class="value-desc">
         Managed a $1M+ client portfolio at PwC, served as the primary point of contact
@@ -1283,7 +1359,9 @@ footer {
       </div>
     </div>
     <div class="value-card">
-      <div class="value-icon">&#9889;</div>
+      <div class="value-icon">
+        <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+      </div>
       <div class="value-title">Proactive Problem Solver</div>
       <div class="value-desc">
         I don't wait for issues to escalate. I anticipate concerns, re-engage clients
@@ -1291,7 +1369,9 @@ footer {
       </div>
     </div>
     <div class="value-card">
-      <div class="value-icon">&#127919;</div>
+      <div class="value-icon">
+        <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+      </div>
       <div class="value-title">Fintech Ready</div>
       <div class="value-desc">
         Deep understanding of fintech operations from the inside. I bridge the gap between
@@ -1303,7 +1383,6 @@ footer {
 
 <!-- EXPERIENCE -->
 <section id="experience">
-  <div class="section-label reveal">Experience</div>
   <h2 class="section-title reveal">Where I've built,<br>audited, and operated.</h2>
 
   <div class="experience-cards">
@@ -1403,7 +1482,7 @@ footer {
       <div class="exp-details">
         <ul class="exp-highlights">
           <li>Key team member on Husky Technologies audit, preparing financial statements ahead of NYSE listing (now GPGI, valued at ~$7.4B)</li>
-          <li>Dye & Durham (software company) audit engagement, gaining SaaS industry exposure</li>
+          <li>Dye &amp; Durham (software company) audit engagement, gaining SaaS industry exposure</li>
           <li>Supported IPO/transaction readiness through detailed financial reporting and disclosure preparation</li>
         </ul>
         <div class="exp-industries">
@@ -1466,12 +1545,13 @@ footer {
 
 <!-- PROJECTS -->
 <section id="projects" style="background: var(--bg-surface); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border);">
-  <div class="section-label reveal">Projects</div>
   <h2 class="section-title reveal">Problems I've solved.</h2>
 
   <div class="projects-grid">
     <div class="project-card reveal">
-      <div class="project-icon">&#9881;</div>
+      <div class="project-icon">
+        <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 00.33 1.82l.06.06a2 2 0 010 2.83 2 2 0 01-2.83 0l-.06-.06a1.65 1.65 0 00-1.82-.33 1.65 1.65 0 00-1 1.51V21a2 2 0 01-4 0v-.09A1.65 1.65 0 009 19.4a1.65 1.65 0 00-1.82.33l-.06.06a2 2 0 01-2.83-2.83l.06-.06A1.65 1.65 0 004.68 15a1.65 1.65 0 00-1.51-1H3a2 2 0 010-4h.09A1.65 1.65 0 004.6 9a1.65 1.65 0 00-.33-1.82l-.06-.06a2 2 0 012.83-2.83l.06.06A1.65 1.65 0 009 4.68a1.65 1.65 0 001-1.51V3a2 2 0 014 0v.09a1.65 1.65 0 001 1.51 1.65 1.65 0 001.82-.33l.06-.06a2 2 0 012.83 2.83l-.06.06A1.65 1.65 0 0019.4 9a1.65 1.65 0 001.51 1H21a2 2 0 010 4h-.09a1.65 1.65 0 00-1.51 1z"/></svg>
+      </div>
       <div class="project-title">Automating Month-End Close</div>
       <div class="project-problem">Problem</div>
       <p class="project-desc">
@@ -1489,7 +1569,9 @@ footer {
     </div>
 
     <div class="project-card reveal">
-      <div class="project-icon">&#128203;</div>
+      <div class="project-icon">
+        <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h11"/></svg>
+      </div>
       <div class="project-title">External Audit Leadership</div>
       <div class="project-problem">Problem</div>
       <p class="project-desc">
@@ -1507,7 +1589,9 @@ footer {
     </div>
 
     <div class="project-card reveal">
-      <div class="project-icon">&#128274;</div>
+      <div class="project-icon">
+        <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+      </div>
       <div class="project-title">Internal Controls Buildout</div>
       <div class="project-problem">Problem</div>
       <p class="project-desc">
@@ -1525,7 +1609,9 @@ footer {
     </div>
 
     <div class="project-card reveal">
-      <div class="project-icon">&#128200;</div>
+      <div class="project-icon">
+        <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg>
+      </div>
       <div class="project-title">Financial Reporting Overhaul</div>
       <div class="project-problem">Problem</div>
       <p class="project-desc">
@@ -1546,7 +1632,6 @@ footer {
 
 <!-- SKILLS -->
 <section id="skills">
-  <div class="section-label reveal">Skills</div>
   <h2 class="section-title reveal">What I work with.</h2>
 
   <div class="skills-grid">
@@ -1598,12 +1683,13 @@ footer {
 
 <!-- BEYOND WORK -->
 <section class="beyond" id="beyond">
-  <div class="section-label reveal">Beyond Work</div>
   <h2 class="section-title reveal">When I'm not closing books.</h2>
 
   <div class="beyond-grid">
     <div class="beyond-card reveal">
-      <div class="beyond-emoji">&#127758;</div>
+      <div class="beyond-icon">
+        <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10 15.3 15.3 0 014-10z"/></svg>
+      </div>
       <div class="beyond-card-title">Travel</div>
       <div class="beyond-card-desc">
         Exploring new cities and cultures. Lived in Canada and the UAE, and love discovering
@@ -1611,7 +1697,9 @@ footer {
       </div>
     </div>
     <div class="beyond-card reveal">
-      <div class="beyond-emoji">&#127947;</div>
+      <div class="beyond-icon">
+        <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/></svg>
+      </div>
       <div class="beyond-card-title">Fitness</div>
       <div class="beyond-card-desc">
         Consistency over intensity. An active lifestyle keeps me disciplined,
@@ -1619,7 +1707,9 @@ footer {
       </div>
     </div>
     <div class="beyond-card reveal">
-      <div class="beyond-emoji">&#127843;</div>
+      <div class="beyond-icon">
+        <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M18 8h1a4 4 0 010 8h-1"/><path d="M2 8h16v9a4 4 0 01-4 4H6a4 4 0 01-4-4V8z"/><line x1="6" y1="1" x2="6" y2="4"/><line x1="10" y1="1" x2="10" y2="4"/><line x1="14" y1="1" x2="14" y2="4"/></svg>
+      </div>
       <div class="beyond-card-title">Food</div>
       <div class="beyond-card-desc">
         Always hunting for the next great restaurant. Trying new cuisines is one of
@@ -1627,7 +1717,9 @@ footer {
       </div>
     </div>
     <div class="beyond-card reveal">
-      <div class="beyond-emoji">&#128087;</div>
+      <div class="beyond-icon">
+        <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+      </div>
       <div class="beyond-card-title">Style</div>
       <div class="beyond-card-desc">
         Fashion is personal expression. I keep it modern, intentional, and a reflection
@@ -1639,7 +1731,6 @@ footer {
 
 <!-- WHAT I'M LOOKING FOR -->
 <section class="looking-for" id="looking-for">
-  <div class="section-label reveal">What I'm Looking For</div>
   <h2 class="section-title reveal">The right fit matters.</h2>
 
   <div class="looking-grid">
@@ -1674,7 +1765,6 @@ footer {
 
 <!-- CONTACT -->
 <section class="contact" id="contact">
-  <div class="section-label reveal" style="justify-content: center;">Get In Touch</div>
   <h2 class="contact-heading reveal">Building something<br><span class="highlight">exciting?</span></h2>
   <p class="contact-sub reveal">
     I'm looking for a Customer Success role in fintech where I can combine
@@ -1685,7 +1775,7 @@ footer {
       <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><path d="M22 6l-10 7L2 6"/></svg>
       r.elsadaany@gmail.com
     </a>
-    <a href="https://www.linkedin.com/in/reemelsadaany/" target="_blank" class="contact-link">
+    <a href="https://www.linkedin.com/in/reemelsadaany/" target="_blank" rel="noopener" class="contact-link">
       <svg width="18" height="18" fill="currentColor" viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
       LinkedIn
     </a>
@@ -1700,25 +1790,22 @@ footer {
   <span class="footer-text">&copy; 2026 Reem El-Sadaany</span>
   <ul class="footer-links">
     <li><a href="mailto:r.elsadaany@gmail.com">Email</a></li>
-    <li><a href="https://www.linkedin.com/in/reemelsadaany/" target="_blank">LinkedIn</a></li>
+    <li><a href="https://www.linkedin.com/in/reemelsadaany/" target="_blank" rel="noopener">LinkedIn</a></li>
     <li><a href="#hero">Back to Top</a></li>
   </ul>
 </footer>
 
 <script>
-// Nav scroll effect
 window.addEventListener('scroll', () => {
   document.querySelector('nav').classList.toggle('scrolled', window.scrollY > 50);
 });
 
-// Close mobile menu on link click
 document.querySelectorAll('.nav-links a').forEach(link => {
   link.addEventListener('click', () => {
     document.querySelector('.nav-links').classList.remove('open');
   });
 });
 
-// Scroll reveal
 const observer = new IntersectionObserver((entries) => {
   entries.forEach(entry => {
     if (entry.isIntersecting) {
@@ -1729,7 +1816,6 @@ const observer = new IntersectionObserver((entries) => {
 
 document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
 
-// Toggle expand/collapse text
 document.querySelectorAll('.exp-toggle').forEach(btn => {
   btn.addEventListener('click', () => {
     const card = btn.closest('.exp-card');
