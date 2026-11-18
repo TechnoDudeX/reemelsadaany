@@ -2,7 +2,9 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="theme-color" content="#F8FAFC" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#0F172A" media="(prefers-color-scheme: dark)">
 <title>Reem El-Sadaany | CPA &middot; Customer Success &amp; Finance</title>
 <meta name="description" content="Reem El-Sadaany. CPA with Big Four and fintech experience, combining client relationship management, financial operations, and project management.">
 <meta property="og:title" content="Reem El-Sadaany | CPA &middot; Customer Success &amp; Finance">
@@ -1182,6 +1184,61 @@ footer {
 
 @media (max-width: 480px) {
   .beyond-grid { grid-template-columns: 1fr; }
+}
+
+/* PHONE: get the CTAs above the fold, readable body text, thumb-sized targets */
+@media (max-width: 768px) {
+  nav, nav.scrolled {
+    padding-left: max(20px, env(safe-area-inset-left));
+    padding-right: max(12px, env(safe-area-inset-right));
+  }
+  .nav-logo { padding: 13px 0; }
+  .nav-links.open { gap: 0; padding: 8px 20px 16px; }
+  .nav-links.open a { display: block; padding: 13px 0; font-size: 16px; }
+  .nav-links.open a::after { display: none; }
+
+  .hero {
+    min-height: auto;
+    padding: 92px 20px 56px;
+    gap: 20px;
+  }
+  .hero-shape { animation: none; }
+  .hero-photo { width: 128px; height: 128px; }
+  .hero-name { font-size: 46px; margin-bottom: 16px; }
+  .hero-desc { font-size: 17px; line-height: 1.6; margin-bottom: 28px; }
+  .hero-cta-row { flex-wrap: nowrap; }
+  .hero-cta-row a { flex: 1; justify-content: center; min-height: 48px; }
+  .hero-status { margin-top: 24px; }
+  .hero .scroll-hint { display: none; }
+
+  .about-text { font-size: 16px; line-height: 1.75; }
+  .stat-card, .value-card, .project-card, .skill-group,
+  .beyond-card, .looking-yes, .looking-no { padding: 24px; }
+  .value-desc, .beyond-card-desc, .project-desc, .exp-desc,
+  .exp-highlights li, .skill-list li, .looking-list li { font-size: 15px; }
+  .exp-card.expanded .exp-details { max-height: 2000px; }
+  .exp-toggle { min-height: 44px; margin-top: 4px; }
+  .beyond-card { text-align: left; }
+  .beyond-icon { margin: 0 0 12px; justify-content: flex-start; height: auto; }
+
+  .contact-link { width: 100%; justify-content: center; min-height: 52px; }
+  .footer-links a { display: inline-block; padding: 14px 4px; }
+  footer { padding-bottom: max(30px, env(safe-area-inset-bottom)); }
+}
+
+@media (max-width: 360px) {
+  .hero { padding-top: 84px; }
+  .hero-photo { width: 96px; height: 96px; }
+  .hero-name { font-size: 40px; }
+  .hero-desc { font-size: 16px; }
+  .hero-cta-row { flex-direction: column; align-items: stretch; gap: 10px; }
+}
+
+/* Touch screens: a tap shouldn't leave a card stuck in its raised hover state */
+@media (hover: none) {
+  .btn-primary:hover, .btn-secondary:hover, .contact-link:hover,
+  .stat-card:hover, .exp-card:hover, .project-card:hover,
+  .skill-group:hover, .beyond-card:hover, .value-card:hover { transform: none; }
 }
 
 /* SCROLL HINT */
